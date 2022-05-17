@@ -1,0 +1,49 @@
+body {
+    // Скролл заблокирован
+    .lock & {
+        overflow: hidden;
+        touch-action: none;
+    }
+
+    // Сайт загружен
+    .loaded & {
+    }
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    // Прижимаем footer
+    > main {
+        flex: 1 1 auto;
+    }
+
+    // Фикс для слайдеров
+    > * {
+        min-width: 0;
+    }
+}
+
+/****************=======================******************/
+.main-content__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-gap: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.entry-image {
+    display: grid;
+    justify-items: stretch;
+    align-items: stretch;
+
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+        height: 306px;
+    }
+}

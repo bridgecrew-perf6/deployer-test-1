@@ -1,0 +1,12 @@
+.menu {
+    &__list {
+        display: flex;
+        column-gap: 30px;
+    }
+}
+
+.sub-menu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}

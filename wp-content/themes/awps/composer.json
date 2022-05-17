@@ -1,0 +1,70 @@
+{
+  "name": "athemix/awps",
+  "description": "aThemix WordPress Starter Theme",
+  "keywords": [
+    "WordPress",
+    "Theme",
+    "Starter"
+  ],
+  "license": "GPL-3.0",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Anton Zhary",
+      "email": "anton.zhary@gmail.com",
+      "homepage": "https://aThemix.com",
+      "role": "Developer"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*"
+      ]
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.12.2",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%PLUGIN_ACF_KEY}"
+        },
+        "require": {
+          "composer/installers": "^1.4",
+          "ffraenz/private-composer-installer": "^5.0"
+        }
+      }
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "private-composer-installer": {
+        "dotenv-path": ".",
+        "dotenv-name": "../../../.env"
+      }
+    },
+    "wordpress-install-dir": "../../plugins/"
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.2",
+    "ffraenz/private-composer-installer": "^5.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*",
+    "wpackagist-plugin/polylang": "3.2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Awps\\": "./app"
+    },
+    "files": [
+      "./app/Helpers.php"
+    ]
+  }
+}
